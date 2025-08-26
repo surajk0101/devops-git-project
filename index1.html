@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎥 Video Recommendation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="themeSwitch" />
+        <label for="themeSwitch">🌗 Toggle Theme</label>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>🎥 Video Recommendation System</h1>
+
+        <!-- Search and Sort Section -->
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="🔍 Search for videos..." onkeyup="searchVideos()" />
+            
+            <select id="sortCriteria">
+                <option value="rating">⭐ Highest Rated</option>
+                <option value="views">👁️ Most Watched</option>
+                <option value="upload_date">📅 Newest</option>
+            </select>
+
+            <button onclick="sortVideos()">🔄 Sort Videos</button>
+        </div>
+
+        <!-- Add Video Form -->
+        <div class="add-video-form">
+            <h3>➕ Add New Video</h3>
+            <input type="text" id="videoTitle" placeholder="🎥 Video Title" required />
+            <input type="number" id="videoRating" placeholder="⭐ Rating (0-5)" step="0.1" min="0" max="5" required />
+            <input type="number" id="videoViews" placeholder="👁️ Views" required />
+            <input type="date" id="videoDate" required />
+            <button onclick="addVideo()">📩 Add Video</button>
+        </div>
+
+        <!-- Video Listing Section -->
+        <div id="video-list" class="video-list"></div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
